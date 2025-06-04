@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html_003_css.html</title>
+    <link rel="stylesheet" href="./style/outer.css">
+    <style type="text/css">
+        .one{
+            background-color: red;
+        }
+
+        /*
+        CSS 우선순위
+        1. inline style : 요소에 정의에 놓은 스타일
+        2. internal style : head 요소에 정의한 스타일
+        3. external style : 외부에 파일로 정의해놓은 스타일 
+        */
+
+    </style>
+</head>
+<body>
+    <div class="one">internal style</div>
+    <div id="two">external style</div>
+    <div style="color: aqua;"> inline style</div>
+
+</body>
+</html>

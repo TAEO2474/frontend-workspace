@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html_014_table.html</title>
+    <style>
+        table {
+            background-color: yellow;
+            width: 500px;
+
+        }
+
+        table,
+        th,
+        td {
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>
+            수강생 현황
+        </caption>
+        <thead>
+            <tr>
+                <th rowspan="2">교실</th>
+                <th colspan="2" id="s">수강생</th>
+            </tr>
+            <tr>
+                <th id="m">남</th>
+                <th id="w">여</th>
+            </tr>
+
+        </thead>
+
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td>30</td>
+                <td>7</td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            <tr>
+                <td id="L1">L1반</td>
+                <td headers="L1 s m">10</td>
+                <td headers="L1 s w">5</td>
+            </tr>
+            <tr>
+                <td id="L2">L2반</td>
+                <td headers="L2 m">20</td>
+                <td headers="L2 w">2</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>
