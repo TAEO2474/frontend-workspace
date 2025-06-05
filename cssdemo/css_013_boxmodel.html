@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_013_boxmodel.html</title>
+    <style>
+        /*
+    Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+    */
+        div.aa {
+            margin-left: 3px;
+            border-left: 1px solid black;
+            padding-left: 5px;
+            width: 80px;
+            padding-right: 10px;
+            border-right: 2px solid black;
+            margin-right: 4px;
+        }
+
+
+        /*
+        Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+        */
+        div.bb {
+            margin-top: 5px;
+            border-top: 1px double black;
+            padding-top: 3px;
+            height: 100px;
+            padding-bottom: 2px;
+            border-bottom: 2px solid black;
+            margin-bottom: 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="aa">box1(width:105px)</div>
+    <div class="bb">box2(height:115px)</div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_024_menu.html</title>
+    <style>
+        /*수평 네비게이션*/
+        * {
+            margin: 0;
+            padding: 0;
+            border-width: 0;
+        }
+
+        body {
+            margin-left: 10px;
+        }
+
+        nav>dl.menulist {
+            width: 294px;
+            height: 34px;
+            border-left: 2px solid black;
+        }
+
+        nav>dl.menulist>dt {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            text-indent: -2000px;
+        }
+
+        nav>dl.menulist>dd {
+            border: 2px solid black;
+            float: left;
+            border-left: 0px;
+            width: 96px;
+            height: 30px;
+        }
+
+        nav>dl.menulist>dd>a {
+            width: 96px;
+            height: 30px;
+            display: block;
+            text-align: center;
+            /*수평정렬*/
+            line-height: 30px;
+            /*수직정렬(꼼수로 어거지로~)*/
+            text-decoration: none;
+        }
+
+        nav>dl.menulist>dd>a:hover {
+            text-decoration: underline;
+            font-size: 20px;
+            font-weight: bolder;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <dl class="menulist">
+            <dt>메뉴목록</dt>
+            <dd><a href="#">교육센터</a></dd>
+            <dd><a href="#">교육안내</a></dd>
+            <dd><a href="#">교육일정</a></dd>
+        </dl>
+    </nav>
+
+</body>
+
+</html>

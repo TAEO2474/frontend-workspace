@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_015_background.html</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dv1 {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+        }
+
+        .dv2 {
+            width: 500px;
+            height: 500px;
+            background-color: gray;
+            background-image: url("images/gosu.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            /*수평수직*/
+            /*left center right, top center bottom*/
+        }
+
+        .dv3 {
+            width: 150px;
+            height: 100px;
+            background-image: url("images/pic1.jpg");
+            background-repeat: no-repeat;
+            border: 20px dotted rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            background-clip: content-box;
+            /*border-box padding-box content-box*/
+        }
+
+        .dv4 {
+            width: 150px;
+            height: 100px;
+            margin-top: 20px;
+            background-image: url("images/pic1.jpg");
+            background-repeat: no-repeat;
+            border: 20px dotted rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            background-origin: border-box;
+            /*이미지가 배치되는 기준점을 나타낸다*/
+        }
+
+        /*background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;*/
+        .dv5 {
+            background-color: red;
+            width: 300px;
+            height: 100px;
+        }
+
+        .dv6 {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            background: url("images/gosu.jpg") center center no-repeat;
+
+        }
+
+        body {
+            width: 300px;
+            height: 200px;
+            background-image: url("images/sky.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dv1">&nbsp;</div>
+    <div class="dv2">&nbsp;</div>
+    <div class="dv3">&nbsp;</div>
+    <div class="dv4">&nbsp;</div>
+    <div class="dv5">&nbsp;</div>
+    <div class="dv6">&nbsp;</div>
+
+</body>
+
+</html>
