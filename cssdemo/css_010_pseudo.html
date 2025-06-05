@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_010_pseudo.html</title>
+    <style>
+        p:nth-child(even) {
+            background-color: green;
+        }
+
+        p:nth-child(2n) {
+            background-color: orange;
+        }
+
+        p:nth-child(odd) {
+            background-color: blue;
+        }
+
+        /* 홀수p 마지막에 선언된 보라색으로 덮어쓴다*/
+        p:nth-child(2n-1) {
+            background-color: purple;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <p>computer</p>
+        <span>test</span>
+        <p>moniter</p>
+        <p>televison</p>
+        <p>desk</p>
+        <p>top</p>
+    </div>
+</body>
+
+</html>

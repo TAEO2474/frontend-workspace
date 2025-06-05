@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_005_selector.html</title>
+    <style>
+        /* 선택자 조합*/
+        /* > 꺽세는 '자식 선택자'이다*/
+        div>span {
+            color: yellow;
+        }
+
+        /* 공백은 '자손 선택자'이다*/
+        div P span {
+            color: purple;
+        }
+
+        /* + 은 '인접(형제)선택자'이다*/
+        div+p {
+            background-color: red;
+        }
+
+        /*[속성명='값'] '속성선택자' 이다*/
+        P[class="one"] {
+            border: 1px solid orange;
+        }
+
+        /*, 쉼표는 '그룹화선택자' 이다*/
+        img,
+        address {
+            border: 3px solid purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>div요소의 <font>자손요소</font>
+        </p>
+        <span>div요소의 자식요소</span>
+    </div>
+
+    <p>다양한 선택자를 지정하는 방법</p>
+    <p class="one">속성에 대한 선택자를 지정</p>
+
+    <div>
+        <p><span>div요소의 자손요소</span></p>
+    </div>
+
+    <img src="images/gosu.jpg" alt="고수" width="100" height="100" />
+    <address>서울 서초구 서초동</address>
+    <div class="one">box</div>
+
+</body>
+
+</html>
