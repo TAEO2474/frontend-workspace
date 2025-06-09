@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js007_hosting.html</title>
+</head>
+
+<body>
+    <script>
+        var foo;
+        // 변수선언 전:Uncaught ReferenceError: foo is not defined
+        // 변수선언 후:foo:undefined
+        console.log(`foo:${foo}`);
+
+        // 변수선언 전: Uncaught ReferenceError: bar is not defined
+        // 변수선언 후: Uncaught ReferenceError: Cannot access 'bar' before initialization
+        //console.log(`bar:${bar}`);
+
+        foo = 5;
+        //let bar;
+    </script>
+</body>
+
+</html>

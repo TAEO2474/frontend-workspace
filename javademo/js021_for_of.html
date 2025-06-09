@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js021_for_of.html</title>
+</head>
+
+<body>
+    <script>
+        // for ~ of : element를 가져옴
+        let color = ["red", "green", "blue"];
+        for (let element of color) {
+            console.log(element);
+        }
+
+        let subject = "script";
+        for (let idx in subject) {
+            console.log(idx); // 인덱스 출력
+        }
+        for (let element of subject) {
+            console.log(element); // 문자 하나씩 출력
+        }
+
+        console.log("====================================="); // ✅ 수정됨
+
+        let obj = { a: 1, b: 2, c: 3 };
+        // for...of로는 객체를 직접 순회할 수 없음 (TypeError 발생)
+        // Object.entries() 또는 Object.values() 사용해야 함
+        for (let [key, value] of Object.entries(obj)) {
+            console.log(`${key}: ${value}`);
+        }
+
+        /*
+        for ~ of 문은 반복 가능한 (Array, String, Map, Set, arguments) 객체에만 사용 가능
+        일반 객체는 iterable이 아니므로 직접 사용할 수 없으며, Object.entries() 등을 통해 iterable로 변환해야 함
+        */
+    </script>
+</body>
+
+</html>ㅁ

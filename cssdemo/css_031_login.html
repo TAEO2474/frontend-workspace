@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_031_login.html</title>
+</head>
+<style>
+    * {
+        margin: 0PX;
+        padding: 0PX;
+        border-width: 0PX;
+    }
+
+    body {
+        margin: 50PX;
+    }
+
+    form {
+        background-color: yellow;
+        width: 280PX;
+        height: 100PX;
+    }
+
+    .loginMenu {
+        width: 278px;
+        height: 98px;
+        border: 1px solid black;
+        position: relative;
+        /*static: 기본값,요소는 문서 흐름(HTML 작성 순서)에 따라 자동 배치,  위치 이동 불가, 레이아웃 흐름 그대로*/
+        /* relative :요소는 문서 흐름(HTML 작성 순서)에 따라 자동 배치*/
+    }
+
+    .loginMenu * {
+        position: absolute;
+        left: 0PX;
+        top: 0PX;
+    }
+
+    .loginMenu #id {
+        width: 150px;
+        height: 20px;
+        left: 20px;
+        top: 10px;
+        border: 1px solid black;
+    }
+
+
+    .loginMenu #password {
+        width: 150px;
+        height: 20px;
+        left: 20px;
+        top: 38px;
+        border: 1px solid black;
+    }
+
+    .loginMenu #remember {
+        width: 14px;
+        height: 14;
+        left: 178px;
+        top: 13px;
+        border: 1px solid black;
+    }
+
+    .loginMenu label {
+        width: 74px;
+        height: 15px;
+        left: 198px;
+        top: 12px;
+        letter-spacing: -2px;
+    }
+
+    .loginMenu #loginBtn {
+        width: 60px;
+        height: 20px;
+        left: 178px;
+        top: 38px;
+    }
+
+    .loginMenu span a {
+        display: block;
+        width: 100px;
+        height: 20px;
+        font-size: 14px;
+        color: #00bfff;
+        font-weight: bolder;
+        text-decoration: none;
+        text-align: center;
+        top: 64px;
+    }
+
+    .loginMenu span a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+
+    .loginMenu legend {
+        width: 0px;
+        height: 0px;
+        font-size: opx;
+        text-indent: -200px;
+        visibility: hidden;
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <form action="#" method="post">
+            <fieldset class="loginMenu">
+                <legend class="hidden">로그인</legend>
+                <input type="text" id="id" name="id" title="아이디입력" placeholder="아이디입력" />
+                <input type="password" name="password" id="password" title="비밀번호입력" placeholder="비밀번호입력" />
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember">아이디 저장</label>
+                <input type="image" src="images/signin.gif" alt="로그인버튼" id="loginBtn" />
+                <span><a href="#">회원가입</a></span>
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>

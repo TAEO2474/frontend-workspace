@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js006_var_let.html</title>
+</head>
+
+<body>
+    <script>
+        var name = "홍길동";
+        console.log(`name=${name}`);
+
+        // * var는 중복선언 가능하다
+        var name = "고수";
+        console.log(`name=${name}`);
+
+
+        let color = "Red";
+        console.log(`color=${color}`);
+        // * let은 중복선언 불가능하다
+        //Cannot redeclare block-scoped variable 'color'.
+        // let color = "Blue";
+        // console.log(`color=${color}`);
+
+
+    </script>
+</body>
+
+</html>

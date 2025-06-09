@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_029_visibility.html</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*display: none;*/
+            /*원래 영역 위치를 잃어버린다*/
+            visibility: hidden;
+            width: 0px;
+            height: 0px;
+            font-size: 0;
+            /*블록 요소 <div>는 숨겨졌습니다.
+            하지만 단순히 visibility: hidden만 사용한 게 아니라, 크기를 0으로 줄여서 공간까지 없앴기 때문에, 
+            사실상 화면에서 완전히 사라진 것처럼 작동합니다.*/
+
+        }
+    </style>
+</head>
+
+<body>
+    <p>before</p>
+    <div>test</div>
+    <p>after</p>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js003_variable.html</title>
+</head>
+
+<body>
+    <script>
+        //변수(variable) : 변하는 데이터(값)을 지정할 수 있는 메모리 공간이다.
+        // var,  let, const
+        console.log(3);
+        console.log(3);
+
+
+        //문자열 포맷팅
+        let data = 3;
+        console.log(data);
+        console.log("data:%d", data);
+
+
+        let s = "js";
+        let f = 4.5569;
+        console.log("s:%s, f:%f", s, f);
+
+
+        //https://developer.mozilla.org/ko/docs/Web/API/console#%EC%98%88%EC%A0%9C
+        //chrome에서는 숫자서식이 지원안됨()
+        console.log("f:%.2f", f);
+
+
+        let b = true;
+        console.log("b:%s", b);
+
+
+        //템플릿 문자열(`(백틱)으로 묶어서 처리해야 한다.)
+        console.log(`data:${data} s:${s}  f:${f} b:${b}`);
+
+
+        let d = null;
+        console.log(`d=${d}`);
+
+
+        //Uncaught ReferenceError: e is not defined
+        console.log(`e=${e}`);
+        console.log("e=%e", e);
+    </script>
+</body>
+
+</html>
+
+
+</html>

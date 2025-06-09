@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js010_datatype.html</title>
+</head>
+
+<body>
+    <script>
+        let data = 30;
+        data = "HI TAEO"; // 위의 변수 30 값이 -> HI TAEO로 변경
+
+        let wrap = data;
+        console.log(wrap == data); //true
+        console.log(`${data} ${wrap}`);//HI TAEO HI TAEO
+
+        wrap = "korea"; // wrap 변수값 재할당
+        console.log(wrap == data); //false
+        console.log(`${data} ${wrap}`);//HI TAEO korea
+
+        let sn = new String("java");
+        let sk = sn;
+        console.log(sn == sk);//true
+
+        sk = new String("jsp")
+        console.log(sn == sk);//false
+    </script>
+
+</body>
+
+</html>
