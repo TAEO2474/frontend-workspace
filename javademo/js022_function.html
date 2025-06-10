@@ -86,7 +86,7 @@
             console.log(`${name}님 환영합니다.`);
         }
 
-        hello("홍길동");
+        hello("홍길동");  //함수를 호출(call)하는 코드
         console.log(hello("여진구")); // hello()함수는 리턴이 없으로 undefined가 발생한다.
 
         ///////////////////////////////////////////////////
@@ -138,6 +138,131 @@
 
         console.log(call2); //(a) => a
         console.log(call2(3)); //3
+
+        ///////////////////////////////////
+        // 중첩함수
+        function outer(a, b) {
+            // 1. outer 함수가 호출됨. a = 10, b = 3
+            // 2. 내부에서 아직 정의되지 않은 inner 함수를 호출하려 함.
+            //    하지만 자바스크립트는 함수 선언을 호이스팅하므로 문제 없이 실행됨.
+            let result = inner(a, b);  // 3. inner 함수 호출 → 10 + 3 = 13 → result에 13 저장됨
+
+            // 4. inner 함수는 outer 함수 내부에 정의된 중첩 함수
+            function inner(a, b) {
+                // 5. inner 함수는 두 숫자를 더해서 반환
+                return a + b;
+            }
+
+            // 6. 다시 한 번 inner 함수 호출 → 10 + 3 = 13 → result에 다시 13 저장
+            result = inner(a, b);
+
+            // 7. result 값(13)을 반환
+            return result;
+        }
+
+        // 8. outer(10, 3) 호출 → return 값 13을 console.log로 출력
+        console.log(outer(10, 3)); // 출력 결과: 13
+
+        ///////////////////////////////////
+        // Call-back 함수
+        //콜백함수
+        //1. 다른 함수의 인수로 사용되는 함수
+        //2. 어떤 이벤트에 의해 호출되는 함수  : btn.onclick= function(){}
+
+        function callback(a, b) {
+            return a + b;
+        }
+
+        function getNumber(callFunc) {
+            console.log(`==: ${callFunc}`); // ==: function callback(a, b) { return a + b;}
+            let result = callFunc(1, 6);
+            return result
+        }
+
+        console.log(getNumber(callback)); //7
+
+
+        //////////////////////////////////////////////////////
+        //클로저(closure)
+        /*
+        1)중첩함수는 outer(외부)함수가 끝나면 외부에서 outer(외부)함수의 자원을 사용할 수 없다.
+        2)클로저는 outer(외부) 함수보다 중첩 함수가 더 오래 유지되는 경우 중첩 함수는 이미 생명주기가 종료한
+            외부함수의 변수를 참조할 수 있다. 이러한 중첩함수가 클로저(closure)이다.
+        3)클로저는 변수가 의도치 않게 변경되지 않도록 안전하게 은닉(information hiding)하고 특정 함수에게만
+            상태 변경을 허용하여 상태를 안전하게 변경하고 유지하기 위해 사용한다.
+        */
+
+
+        function outerFunc() {
+            let sum = 50;
+            function innerFunc(a) {
+                return sum + a;
+            }
+            return innerFunc;
+        }
+
+        let outerCal = outerFunc();
+        console.log(outerCal); //ƒ innerFunc(a) {return sum + a;}
+        console.log(outerCal(1)); //51
+        console.log(outerCal(2)); //52
+
+
+
+        ///////////////////////////////////////////////
+        //함수 파라미터
+        function display(a, b) {
+            console.log(`a=${a} b=${b}`);
+        }
+
+        display(); //a=undefined b=undefined
+        display(1);// a=1 b=undefined
+        display(1, 2); // a=1 b=2
+        display(1, 2, 3, 4, 5); // a=1 b=2
+
+        //(1) 기본 파라미터 (default parameter): 
+        function display2(a, b) {
+            console.log(`a=${a} b=${b}`);
+        }
+        display2(); //
+        display2(1);//
+        display2(1, 2); // a=1 b=2
+        display2(1, 2, 3, 4, 5); // a=1 b=2
+
+        //2. 나머지 파라미터(Rest Parameter) : ES6-2015
+        // - 파라미터 갯수를 가변으로 사용할 수 있도록 제공해주는 연산자이다.
+        // - spread operator(점 3개(...))를 맨 마지막 파라미터로 사용해주면 된다.
+
+        function display3(...args) {
+            console.log(args);
+            console.log(typeof args, args instanceof Array);
+        }
+
+        display3(); //
+        display3(1);//
+        display3(1, 2);
+        display3(1, 2, 3, 4, 5);
+        display3(1, "ko", true, 4.5);
+
+
+        function display4(num = 0, ...args) {
+            console.log(num);
+            console.log(args);
+        }
+
+        display4();
+        display4(1);
+        display4(1, 2);
+        display4(1, 2, 3, 4, 5);
+        ///////////////////////////////////////////////
+        //arguments 객체
+        function display5() {
+            let result = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(typeof arguments, arguments instanceof Object, arguments.callee);
+                console.log(arguments[i]);
+            }
+        }
+        display5(1, 2, 3, 4, 5);
 
     </script>
 </body>

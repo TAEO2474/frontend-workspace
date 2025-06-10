@@ -9,14 +9,15 @@
 
 <body>
     <script>
-        var foo = 100;
-        let bar = 20;
+        // <변수의 종류 var, let, const>
+        var foo = 100; // 함수 스코프를 가지며, 중복 선언 가능 (지양).
+        let bar = 20; //블록 스코프를 가지며, 중복 선언 불가. 값을 변경할 수 있음.
         const tap = 50; // 상수: 변수를 선언할때 한번만 값을 할당할 수 있다
 
         foo = 30;
         bar = 40;
         //Uncaught TypeError: Assignment to constant variable.
-        //tap = 60;
+        //tap = 60;  → const(상수)로 선언한 변수는 재할당이 불가능하기 때문.
 
         console.log(`foo=${foo}`);
         console.log(`bar=${bar}`);
