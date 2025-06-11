@@ -9,31 +9,37 @@
 
 <body>
     <script>
-        // for ~ of : element를 가져옴
+        // for (~ of~) 문 :  배열 안의 **각 요소(여기선 색상 문자열)**를 하나씩 꺼내서 element 변수에 담아줍니다.
+        // 이터러블(iterable) 객체를 순회할 때 사용하는 문법 (배열(Array), 문자열(String), Map, Set 등등....)
         let color = ["red", "green", "blue"];
         for (let element of color) {
-            console.log(element);
+            console.log(element);//red, "green, blue
         }
 
+        //for (~in~) 문  객체의 열거 가능한 속성(property) 이름들을 순회(iterate)할 때 
         let subject = "script";
         for (let idx in subject) {
-            console.log(idx); // 인덱스 출력
+            console.log(idx); // 0,1,2,3,4,5 (script 문자의 인덱스 출력)
         }
+
+
         for (let element of subject) {
             console.log(element); // 문자 하나씩 출력
         }
 
-        console.log("====================================="); // ✅ 수정됨
+        console.log("=====================================");
 
-        let obj = { a: 1, b: 2, c: 3 };
+        let obj = { a: 1, b: 2, c: 3 }; // 객체 (배열X), (여기서 key는 a, value는1)
         // for...of로는 객체를 직접 순회할 수 없음 (TypeError 발생)
-        // Object.entries() 또는 Object.values() 사용해야 함
+        // Object.entries() 또는 Object.values() 사용해야 함  (이유:객체 (배열X))
+        // 객체 object : 자바스크립트에서 키(key)와 값(value) 쌍으로 데이터를 저장하는 자료형
         for (let [key, value] of Object.entries(obj)) {
-            console.log(`${key}: ${value}`);
+            console.log(`${key}: ${value}`);//a: 1, b: 2, c: 3 출력
         }
 
         /*
-        for ~ of 문은 반복 가능한 (Array, String, Map, Set, arguments) 객체에만 사용 가능
+        중요
+        for (~ of ~) 문은 반복 가능한 (Array, String, Map, Set, arguments) 객체에만 사용 가능
         일반 객체는 iterable이 아니므로 직접 사용할 수 없으며, Object.entries() 등을 통해 iterable로 변환해야 함
         */
     </script>

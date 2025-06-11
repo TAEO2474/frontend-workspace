@@ -10,17 +10,21 @@
 <body>
     <script>
         /*
-     조건연산자 : 조건식 ? true : false 
-                 조건식 ? (조건식 : true1 : false1) : false
-                  회원이고 VIP이면 : 30%,  회원이고 일반이면 :20%  , 비회원 : 2%
+     조건연산자 (삼항연산자 기본형) : 조건식 ? true : false 
+     조건연산자 (삼항연산자 중첩형) :  조건식 ? (조건식 : true1 : false1) : false ()
+                                    회원이고 VIP이면 : 30%,  회원이고 일반이면 :20%  , 비회원 : 2%
       */
 
         let member = true;
         let glade = "general";
         let count = 1000;
 
+        //  조건연산자 (삼항연산자 중첩형)
         let res = member ? (glade == "VIP" ? 0.3 : 0.2) : 0.02;
-        console.log(res * count);
+        // 해석: true ? (false ? true: false) :0.02;
+        //       true ? (0.2) :0.02;
+        //        0.2
+        console.log(res * count); //0.2 * 1000 = 200 (출력)
 
         let chk = true ? "홍길동" : 30;
         console.log(chk);// 홍길동

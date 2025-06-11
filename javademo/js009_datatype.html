@@ -50,10 +50,11 @@
         console.log(`arr=${arr instanceof Array}`); // arr=true
 
         let customer = { name: "홍길동", age: 30 };
-        //customer=[object Object], object
-        console.log(`customer=${customer}, ${typeof customer}`);
+        console.log(`customer=${customer}, ${typeof customer}`);//customer=[object Object], object(객체)
+        // Q : 왜[object Object]가 출력되는가 ?
+        // A : JavaScript에서 객체를 문자열로 변환하려고 하면 toString() 메서드가 호출됩니다.일반적인 객체({})의 기본 toString() 구현은 다음과 같습니다:
         console.log(`customer=${customer instanceof Object}`); //customer=true
-
+        // 만약 {}안에 객체들의 문자자체를 출력하고 싶으면 아래 같이 하세요 ~
         console.log(`${customer.name}, ${customer.age}`); //홍길동, 30
 
     </script>

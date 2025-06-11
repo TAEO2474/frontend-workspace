@@ -12,13 +12,14 @@
         var foo;
         // 변수선언 전:Uncaught ReferenceError: foo is not defined
         // 변수선언 후:foo:undefined
-        console.log(`foo:${foo}`);
+        console.log(`foo:${foo}`);  // 선언이 먼저 호이스팅됨 (초기값: undefined)
 
         // 변수선언 전: Uncaught ReferenceError: bar is not defined
         // 변수선언 후: Uncaught ReferenceError: Cannot access 'bar' before initialization
         //console.log(`bar:${bar}`);
 
         foo = 5;
+        console.log(`foo:${foo}`);//foo:5
         //let bar;
     </script>
 </body>

@@ -12,23 +12,24 @@
     let b = 4;
     let sum = 0;
 
-    sum = a + b;
-    console.log(`sum=${sum}`);
+    sum = a + b; //3+ 4 =7
+    console.log(`sum=${sum}`);//sum=7
 
     let data = 0;
     data = data + a;
     data += a;
-    console.log(`data=${data}`);
+    console.log(`data=${data}`);//data=6
 
-    //연산자 우선순위
+    // <연산자 우선순위>
     // 단항연산자 > 산술 > 비교 > 논리> 조건> 대입
 
     let x = 5;
     let y = 8;
     let z = 10;
-    let result = x > y ? x++ : y++;
-    //result=8, x=5, y=9
-    console.log(`result=${result}, x=${x}, y=${y}`);
+    let result = x > y ? x++ : y++; // 5>8(false) ? x++ : 9
+    console.log(`result=${result}, x=${x}, y=${y}`);//result=8, x=5, y=9
+    // result에 y의 현재값 8을 출력한다(이유는 없음)
+
 </script>
 
 <body>
