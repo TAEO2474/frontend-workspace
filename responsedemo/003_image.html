@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 이미지 만들기</title>
+    <style>
+        /*
+        [width 속성과 max-width 속성 ]
+        - width: 100%로 지정하면 부모 요소의 너비가 커질 때 화질이 떨어질 수 있음.
+        - max-width: 100%로 지정하면 부모 요소 너비가 커져서 이미지가 커지더라도 이미지 원본 크기만큼만 커짐
+        */
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        /*  이미지를 반응형으로 만들기 */
+        .top {
+            /* width: 100%; */
+            max-width: 100%;
+            height: auto;
+            /*height에서 100%는 부모태그의 값에 영향을 받고 auto는 자식태그의 값에 영향을 받음 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>브라우저 창의 크기를 조절해보세요.</p>
+        <img src="images/kitten.jpg" alt="베개 뒤에 숨어 있는 고양이" class="top">
+    </div>
+</body>
+
+</html>

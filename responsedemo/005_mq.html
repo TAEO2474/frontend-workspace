@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어 쿼리 사용하기</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+
+
+    body {
+      background: url(images/bg-light.jpg) no-repeat fixed;
+      background-size: cover;
+    }
+
+    /* 미디어 쿼리(media queries) : 접속하는 장치(미디어)에 따라 특정한 CSS 스타일을 사용하는 방법*/
+
+    /* 768px ~ 1023px 이면 images/bg-dark.jpg 사용 */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      body {
+        background: url(images/bg-dark.jpg) no-repeat fixed;
+        background-size: cover;
+        color: #fff;
+      }
+    }
+
+    /* 768px 미만이면 images/bg-small.jpg 사용 */
+    @media screen and (max-width: 767px) {
+      body {
+        background: url(images/bg-small.jpg) no-repeat fixed;
+        background-size: cover;
+        color: #fff;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>미디어 쿼리</h1>
+</body>
+
+</html>
+
+
+<!-- [미디어(스크린) 쿼리 사용]
+@media 속성을 사용해 특정 미디어에서 어떤 CSS를 적용할 것인지 지정함.
+<style>
+  태그와
+</style> 태그 사이에 사용
+
+@media [only | not] 미디어 유형 [and 조건] * [and 조건]
+① only : 미디어 쿼리를 지원하지 않는 웹브라우저에서는 미디어 쿼리를 무시하고 실행하지 않는다.
+② not: not 다음에 지정하는 미디어 유형을 제외한다. 예를 들어 not tv라고 지정하면 TV를 제외한 미디어 유형에만 적용한다.
+③ and: 조건을 여러 개 연결해서 추가할 수 있다
+
+미디어 유형의 종류
+all 모든 장치
+print 인쇄 장치
+screen 컴퓨터 화면 장치 또는 스마트 기기의 화면
+tv 영상과 음성이 동시에 출력되는 장치
+projection 프로젝터 장치
+handheld 손에 들고 다니는 소형장치
+speech 음성 출력 장치
+aural 음성 합성 장치(화면을 읽어 소리로 출력해 주는 장치)
+embossed 점자 인쇄 장치(화면을 읽어 종이에 점지를 찍어내는 장치)
+tty 디스플레이 기능이 제한된 장치
+braille 점자 표시 장치 -->
