@@ -1,0 +1,137 @@
+/* =============================
+   전체 페이지 및 기본 스타일
+============================= */
+
+/* 페이지 배경 및 전체 높이 지정 */
+html,
+body {
+  background-color: #e8e8e8;
+  height: 100%;
+}
+
+/* 링크 스타일 초기화 및 호버 색상 지정 */
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #a00;
+  /* 마우스 오버 시 붉은색 */
+}
+
+/* 제목 스타일 (페이지 최상단 h1) */
+h1 {
+  text-align: center;
+  background-color: #fff;
+  padding: 5px;
+  margin: 0;
+}
+
+/* =============================
+   메인 컨테이너 레이아웃
+============================= */
+
+/* 전체 폼을 감싸는 박스 스타일 */
+.wrap {
+  max-width: 480px;
+  /* 최대 너비 480px */
+  margin: 0 auto;
+  /* 가운데 정렬 */
+  background-color: #fff;
+  /* 흰색 배경 */
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  /* 패딩 포함 크기 계산 */
+}
+
+/* 리뷰 텍스트 입력창 스타일 */
+.reviewform textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* =============================
+   별점 입력 영역 스타일
+============================= */
+
+/* 체크박스 자체는 화면에 보이지 않음 */
+.rating .rate_radio {
+  position: relative;
+  display: inline-block;
+  z-index: 20;
+  opacity: 0.001;
+  /* 거의 투명 */
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  cursor: pointer;
+  vertical-align: top;
+  display: none;
+  /* 완전히 숨김 처리 */
+}
+
+/* 라벨에 별 이미지 배경을 표시 (스타 이미지) */
+.rating .rate_radio+label {
+  position: relative;
+  display: inline-block;
+  margin-left: -4px;
+  /* 별들이 겹치지 않고 나란히 붙도록 조정 */
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  background-image: url("./images/starrate.png");
+  /* 별 이미지 파일 */
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  /* 선택 전 배경색 */
+}
+
+/* 선택된 별점(체크된 별)의 배경 변경 */
+.rating .rate_radio:checked+label {
+  background-color: #ff8;
+  /* 노란색 계열로 강조 */
+}
+
+/* =============================
+   등록 버튼 스타일
+============================= */
+
+.cmd {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.cmd input[type="button"] {
+  padding: 10px 20px;
+  border: 1px solid #e8e8e8;
+  background-color: #000;
+  /* 검정색 배경 */
+  color: #fff;
+  /* 흰색 텍스트 */
+}
+
+/* =============================
+   경고 메시지 박스
+============================= */
+
+/* 기본은 보이지 않음, 조건에 따라 JavaScript로 표시 */
+.warning_msg {
+  display: none;
+  position: relative;
+  text-align: center;
+  background: #ffffff;
+  line-height: 26px;
+  width: 100%;
+  color: red;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+}

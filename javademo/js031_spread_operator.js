@@ -5,20 +5,23 @@
 // [1] 배열에성의 Spread Operator
 
 // 1. 배열 복사 (Array Copy)
+// 1-1 Shallow Copy (얇은 복사)
+// : 객체의 참조(reference),원본과 복사본이 같은 메모리 주소를 공유하기 때문에,하나를 변경하면 둘 다 영향
 let arr1 = [1, 2, 4];
-let arr2 = arr1; // Shallow Copy (얇은 복사) 
-console.log(`arr1:${arr1}`);
-console.log(`arr1:${arr2}`);
-// console.log(arr1);
+let arr2 = arr1;
+console.log(`arr1:${arr1}`);//arr1:1,2,4
+console.log(`arr1:${arr2}`); //arr1: 1, 2, 4
 
-arr2.push(4);
+arr2.push(4); //push()는 배열의 끝에 새 요소를 추가하는 메소드(마지막에 4를 추가!)
 console.log(`arr1:${arr1}`);
 console.log(`arr2:${arr2}`);
 
+// 1-2 Deep Copy (깊은 복사)
+// : 값을 새로 복사해서 완전히 독립된 객체를 만듭니다. 복사본을 수정해도 원본은 영향 받지 않음.
 let arr3 = [1, 2, 3];
-let arr4 = [...arr3]; // Deep Copy (깊은 복사)
-console.log(`arr3:${arr4}`);
-console.log(`arr3:${arr4}`);
+let arr4 = [...arr3];
+console.log(`arr3:${arr4}`);// [1, 2, 3]
+console.log(`arr3:${arr4}`);// [1, 2, 3, 4]
 
 arr4.push(4);
 console.log(`arr3:${arr4}`);
